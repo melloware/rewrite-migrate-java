@@ -15,9 +15,12 @@
 #
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
-displayName: Migrate deprecated `javax` packages to `jakarta`
-description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+name: org.openrewrite.java.migrate.jakarta.MigrateToJakartaEE9
+displayName: Migrate to Jakarta EE 9 from Java EE 8
+description: >
+  Java EE has been rebranded to Jakarta EE, necessitating a package relocation. This recipe will rename packages and
+  types from the `javax` namespace to the `jakarta` namespace. Additionally, this recipe will update dependencies of
+  well-known, third-party libraries to version that are compatible with Jakarta EE 9.
 tags:
   - jaxb
   - jaxws
@@ -26,15 +29,15 @@ tags:
 # TODO: Update XML references if necessary.
 # TODO: Rename bootstrapping files if necessary.
 recipeList:
-  - org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation
-  - org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation
-  - org.openrewrite.java.migrate.jakarta.JavaxBatchMigrationToJakartaBatch
+  - org.openrewrite.java.migrate.jakarta.JavaxActivationToJakartaActivation
+  - org.openrewrite.java.migrate.jakarta.JavaxAnnotationToJakartaAnnotation
+  - org.openrewrite.java.migrate.jakarta.JavaxBatchToJakartaBatch
   - org.openrewrite.java.migrate.jakarta.JavaxDecoratorToJakartaDecorator
   - org.openrewrite.java.migrate.jakarta.JavaxEjbToJakartaEjb
   - org.openrewrite.java.migrate.jakarta.JavaxElToJakartaEl
   - org.openrewrite.java.migrate.jakarta.JavaxEnterpriseToJakartaEnterprise
   - org.openrewrite.java.migrate.jakarta.JavaxFacesToJakartaFaces
-  - org.openrewrite.java.migrate.jakarta.JavaxInjectMigrationToJakartaInject
+  - org.openrewrite.java.migrate.jakarta.JavaxInjectToJakartaInject
   - org.openrewrite.java.migrate.jakarta.JavaxInterceptorToJakartaInterceptor
   - org.openrewrite.java.migrate.jakarta.JavaxJmsToJakartaJms
   - org.openrewrite.java.migrate.jakarta.JavaxJsonToJakartaJson
@@ -44,13 +47,13 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxResourceToJakartaResource
   - org.openrewrite.java.migrate.jakarta.JavaxSecurityToJakartaSecurity
   - org.openrewrite.java.migrate.jakarta.JavaxServletToJakartaServlet
-  - org.openrewrite.java.migrate.jakarta.JavaxTransactionMigrationToJakartaTransaction
-  - org.openrewrite.java.migrate.jakarta.JavaxValidationMigrationToJakartaValidation
+  - org.openrewrite.java.migrate.jakarta.JavaxTransactionToJakartaTransaction
+  - org.openrewrite.java.migrate.jakarta.JavaxValidationToJakartaValidation
   - org.openrewrite.java.migrate.jakarta.JavaxWebsocketToJakartaWebsocket
   - org.openrewrite.java.migrate.jakarta.JavaxWsToJakartaWs
-  - org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind
+  - org.openrewrite.java.migrate.jakarta.JavaxXmlBindToJakartaXmlBind
   - org.openrewrite.java.migrate.jakarta.JavaxXmlSoapToJakartaXmlSoap
-  - org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs
+  - org.openrewrite.java.migrate.jakarta.JavaxXmlWsToJakartaXmlWs
   - org.openrewrite.java.migrate.jakarta.JacksonJavaxToJakarta
   - org.openrewrite.java.migrate.jakarta.EhcacheJavaxToJakarta
   - org.openrewrite.java.migrate.jakarta.JohnzonJavaxToJakarta
@@ -58,7 +61,7 @@ recipeList:
 
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation
+name: org.openrewrite.java.migrate.jakarta.JavaxActivationToJakartaActivation
 displayName: Migrate deprecated `javax.activation` packages to `jakarta.activation`
 description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:
@@ -86,7 +89,7 @@ recipeList:
 
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation
+name: org.openrewrite.java.migrate.jakarta.JavaxAnnotationToJakartaAnnotation
 displayName: Migrate deprecated `javax.annotation` packages to `jakarta.annotation`
 description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:
@@ -204,7 +207,7 @@ recipeList:
 
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.JavaxBatchMigrationToJakartaBatch
+name: org.openrewrite.java.migrate.jakarta.JavaxBatchToJakartaBatch
 displayName: Migrate deprecated `javax.batch` packages to `jakarta.batch`
 description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:
@@ -232,7 +235,7 @@ recipeList:
 
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.JavaxValidationMigrationToJakartaValidation
+name: org.openrewrite.java.migrate.jakarta.JavaxValidationToJakartaValidation
 displayName: Migrate deprecated `javax.validation` packages to `jakarta.validation`
 description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:
@@ -379,7 +382,7 @@ recipeList:
 
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.JavaxInjectMigrationToJakartaInject
+name: org.openrewrite.java.migrate.jakarta.JavaxInjectToJakartaInject
 displayName: Migrate deprecated `javax.inject` packages to `jakarta.inject`
 description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:
@@ -617,7 +620,7 @@ recipeList:
 
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.JavaxTransactionMigrationToJakartaTransaction
+name: org.openrewrite.java.migrate.jakarta.JavaxTransactionToJakartaTransaction
 displayName: Migrate deprecated `javax.transaction` packages to `jakarta.transaction`
 description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:
@@ -691,7 +694,7 @@ recipeList:
 
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind
+name: org.openrewrite.java.migrate.jakarta.JavaxXmlBindToJakartaXmlBind
 displayName: Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`
 description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:
@@ -755,7 +758,7 @@ recipeList:
 
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs
+name: org.openrewrite.java.migrate.jakarta.JavaxXmlWsToJakartaXmlWs
 displayName: Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`
 description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:

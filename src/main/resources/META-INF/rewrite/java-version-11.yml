@@ -15,9 +15,14 @@
 #
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.UpgradeToJava11
-displayName: Upgrade to Java 11
-description: This recipe will apply changes commonly needed when upgrading to Java 11
+name: org.openrewrite.java.migrate.MigrateToJava11
+displayName: Migrate to Java 11 from Java 8 through 10
+description: >
+  This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that
+  are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly
+  bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration
+  strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded
+  to versions that are compatible with Java 11.
 tags:
   - java11
   - jaxb

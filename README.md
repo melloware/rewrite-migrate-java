@@ -8,22 +8,29 @@
 
 ### What is this?
 
-This project implements a [Rewrite module](https://github.com/openrewrite/rewrite) that performs common tasks when migrating from Java 8 to Java 11.
+This project implements a [Rewrite module](https://github.com/openrewrite/rewrite) that performs common tasks when migrating to new version of either Java and/or J2EE.  
+
+# Table of Contents
+
+1. [Java 11 Migration Recipes](#Java-11-Migration-Recipes)
+2. [Java 17 Migration Recipes](#Java-17-Migration-Recipes)
+3. [Jakarta EE 9 Migration Recipes](#Jakarta-EE-9-Migration-Recipes)
+
 
 # Java 11 Migration Recipes
 
-| Recipe Name | Description |
-| ----------- | ----------- |
-| [Add XML binding dependencies](#AddXmlBindingDependencies) | Add or update JAXB dependencies for a Maven build.
-| [Add XML Web Services dependencies](#AddXmlWebServiceDependencies) | Add or update JAX-WS dependencies for a Maven build.
-| [ConvertPrimitiveWrapperConstructors](#ConvertPrimitiveWrapperConstructors) | Convert Primitive Wrapper Class Constructors into `valueOf` methods.
-| [ConvertBigDecimalRoundingMode](#ConvertBigDecimalRoundingMode) | Convert the use of BigDecimal rounding constants to their enum counterparts.
-| [Remediate deprecation warnings and errors](#AddressDeprecations) | Provide remediation for deprecations highlighted by `jdeprscan`.
-| [Migrate XML binding framework to Jakarta namespace](#MigrateXmlBindingToJakarta) | Migrate XML binding framework from `javax.xml.bind.*` to `jakarta.xml.bind.*`
-| [Migrate Java API for XML Web Services to Jakarta namespace](#MigrateXmlWebServicesToJakarta) | Migrate Java API for XML Web Services from `javax.jws.*` to `jakarta.jws.*`
-| [Add `jdeprscan` plugin to Maven](#AddJdeprscanToMaven) | Add the `jdeprscan` maven plugin to a Maven build.
-| [SuppressIllegalReflectiveAccess](#SuppressIllegalReflectiveAccess) | Suppress Illegal reflective access warning via JAR manifest file
-| [UnsafeMigration](#UnsafeMigration) | Migrate the use of `sun.misc.Unsafe` to `VarHandle`
+| Recipe Name                                                                                   | Description |
+|-----------------------------------------------------------------------------------------------| ----------- |
+| [Add XML binding dependencies](#AddXmlBindingDependencies)                                 | Add or update JAXB dependencies for a Maven build. |
+| [Add XML Web Services dependencies](#AddXmlWebServiceDependencies)                            | Add or update JAX-WS dependencies for a Maven build. |
+| [ConvertPrimitiveWrapperConstructors](#ConvertPrimitiveWrapperConstructors)                   | Convert Primitive Wrapper Class Constructors into `valueOf` methods. |
+| [ConvertBigDecimalRoundingMode](#ConvertBigDecimalRoundingMode)                               | Convert the use of BigDecimal rounding constants to their enum counterparts. |
+| [Remediate deprecation warnings and errors](#AddressDeprecations)                             | Provide remediation for deprecations highlighted by `jdeprscan`. |
+| [Migrate XML binding framework to Jakarta namespace](#MigrateXmlBindingToJakarta)             | Migrate XML binding framework from `javax.xml.bind.*` to `jakarta.xml.bind.*` |
+| [Migrate Java API for XML Web Services to Jakarta namespace](#MigrateXmlWebServicesToJakarta) | Migrate Java API for XML Web Services from `javax.jws.*` to `jakarta.jws.*` |
+| [Add `jdeprscan` plugin to Maven](#AddJdeprscanToMaven)                                       | Add the `jdeprscan` maven plugin to a Maven build. |
+| [SuppressIllegalReflectiveAccess](#SuppressIllegalReflectiveAccess)                           | Suppress Illegal reflective access warning via JAR manifest file |
+| [UnsafeMigration](#UnsafeMigration)                                                           | Migrate the use of `sun.misc.Unsafe` to `VarHandle` |
 
 ## Java Architecture for XML Binding (JAXB)
 
@@ -256,3 +263,6 @@ It will be possible to create a set of recipes to aid in the migration of `Unsaf
 ## Helpful tools
 
 - http://ibm.biz/WAMT4AppBinaries
+
+# Java 17 Migration Recipes
+# Jakarta EE 9 Migration Recipes
